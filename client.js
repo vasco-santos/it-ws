@@ -13,6 +13,7 @@ module.exports = function (addr, opts) {
 
   const stream = duplex(socket, opts)
   stream.remoteAddress = url
+  stream.socket = socket
   stream.close = () => new Promise((resolve, reject) => {
     socket.addEventListener('close', resolve)
     socket.close()
