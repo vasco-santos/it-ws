@@ -51,6 +51,7 @@ module.exports = !WebSocket.Server ? null : function (opts, onConnection) {
       socket.close()
     })
     stream.destroy = () => socket.terminate()
+    stream.socket = socket
 
     emitter.emit('connection', stream, req)
   })
