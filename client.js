@@ -20,6 +20,7 @@ module.exports = function (addr, opts = {}) {
   stream.destroy = () => {
     socket.terminate()
   }
+  stream.socket = socket
 
   return stream
 }
